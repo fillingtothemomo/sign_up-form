@@ -1,0 +1,52 @@
+.signup{
+    color:darkslategrey;
+    font-weight: 600;    
+    text-align: center;
+}
+.form{
+    text-align: justify;
+    
+}
+label{
+    background-color: bisque;
+}
+#name{
+    display: block;
+    background-color:azure;
+}
+#confpassword{
+
+    display: block;
+    background-color:azure;
+}
+#password{
+    display: block;
+    background-color:azure;
+}
+#age{
+    display: block;
+    background-color:azure;
+}
+#city{
+    display: block;
+    background-color:azure;
+}
+#gender{
+    display: block;
+    background-color:azure;
+}
+#education{
+    display: block;
+    background-color:azure;
+}
+#mobile{
+    display: block;
+    background-color:azure;
+}
+#email{
+    display: block;
+    background-color:azure;
+}
+.button{
+    background-color: bisque;
+}

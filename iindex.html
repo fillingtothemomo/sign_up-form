@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script src="valid.js"></script>
+    <div class="signup">Sign-Up Form</div>
+    <hr>
+    <br>
+    <form onsubmit="return validation()">
+    
+    <div class="form">
+        <label>Name: </label>
+        <input type="text" name="" id="name">
+        <span id="nameerror"></span>
+    </div>
+    <br>
+    <div class="form">
+        <label>City:  </label>
+        <input type="text" name="" id="city">
+        <span id="cityerror"></span>
+    </div>
+    <br>
+    <div class="form">
+        <label>Mobile Number: </label>
+        <input type="text" name="" id="mobile">
+        <span id="numbererror"></span>
+    </div>
+    <br>
+    <div class="form">
+        <label>Email: </label>
+        <input type="text" name="" id="email">
+        <span id="emailerror"></span>
+    </div>
+    <br>
+    <div class="form">
+        <label>Age: </label>
+        <input type="number" name="" id="age">
+        <span id="ageerror"></span>
+    </div>
+    <br>
+    <div>
+    <label for="gender">Gender:</label>
+  <select id="gender" name="gender">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Others</option></select>
+    
+  </select>
+  </div>
+  <br>
+  <div>
+    <label for="education">Education Qualification:</label>
+  <select id="education" name="education">
+    <option value="Btech">B.Tech</option>
+    <option value="BS">B.S.</option>
+    <option value="PHD">P.H.D</option>
+    <option value="Mtech">M.Tech</option>
+    <option value="MS">M.S.</option>
+
+
+    
+  </select>
+  </div>
+  <br>
+    <div class="form">
+        <label>Password: </label>
+        <input type="text" name="" id="password">
+    </div>
+    <br>
+    <div class="form">
+        <label>Confirm Password: </label>
+        <input type="text" name="" id="confpassword">
+        <span id="cpassworderror"></span>
+    </div>
+    <br>
+    <input type="Submit" name="Submit" class="button">
+    
+</form>
+</body>
+</html>
