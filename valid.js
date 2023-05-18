@@ -10,7 +10,7 @@ const mobileInput = document.getElementById('mobile');
 
 const nameCheck = /^[A-Z]{1}[a-z]{3,}$/;
 const cityCheck = /^[A-Z]{1}[a-z]{3,}$/;
-const mobileCheck = /^[987]{1}[0-9]{9}$/;
+const mobileCheck = /^[0]{0,}[91].[987]{1}[0-9]{9}$/;
 const emailCheck = /\S+@\S+\.\S+/;
 const ageCheck = /^[0-9]{1,2}$/;
 
