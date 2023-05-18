@@ -1,60 +1,82 @@
-function validation(){
-var name= document.getElementById("name").value;
-var password= document.getElementById('password').value;
-var cpassword= document.getElementById('confpassword').value;
-var age= document.getElementById('age').value;
-var city= document.getElementById('city').value;
-var email= document.getElementById('email').value;
-var mobile= document.getElementById('mobile').value;
+// 
+const form = document.getElementById("form");
+const nameInput = document.getElementById("name");
+const passwordInput = document.getElementById('password');
+const cpasswordInput = document.getElementById('confpassword');
+const ageInput = document.getElementById('age');
+const cityInput = document.getElementById('city');
+const emailInput = document.getElementById('email');
+const mobileInput = document.getElementById('mobile');
 
-var namecheck =/^[A-Za-z]{4,}$/;
-var citycheck =/^[A-Za-z]{4,}$/;
+const nameCheck = /^[A-Z]{1}[a-z]{3,}$/;
+const cityCheck = /^[A-Z]{1}[a-z]{3,}$/;
+const mobileCheck = /^[987]{1}[0-9]{9}$/;
+const emailCheck = /\S+@\S+\.\S+/;
+const ageCheck = /^[0-9]{1,2}$/;
 
-var mobilecheck=/^[9][1][0-9]{10}$/;
-var emailcheck = /\S+@\S+\.\S+/;
-var agecheck=/^[0-9]{1,2}$/;
-if(namecheck.test(name)){
-    document.getElementById('nameerror').innerHTML=" ";
-}
-else{
-    document.getElementById('nameerror').innerHTML=" ** Name is invalid";
-    return false;
-}
+nameInput.addEventListener('input', validateName);
+cityInput.addEventListener('input', validateCity);
+mobileInput.addEventListener('input', validateMobile);
+emailInput.addEventListener('input', validateEmail);
+passwordInput.addEventListener('input', validatePassword);
+cpasswordInput.addEventListener('input', validateConfirmPassword);
+ageInput.addEventListener('input', validateAge);
 
-if(citycheck.test(city)){
-    document.getElementById('cityerror').innerHTML=" ";
-}
-else{
-    document.getElementById('cityerror').innerHTML=" ** city is invalid";
-    return false;
-}
-if(mobilecheck.test(mobile)){
-    document.getElementById('mobileerror').innerHTML=" ";
-}
-else{
-    document.getElementById('nameerror').innerHTML=" ** number is invalid";
-    return false;
+function validateName() {
+  const name = nameInput.value.trim();
+  if (nameCheck.test(name)) {
+    document.getElementById('nameerror').innerHTML = "";
+  } else {
+    document.getElementById('nameerror').innerHTML = " ** Name is invalid";
+  }
 }
 
-if(emailcheck.test(email)){
-    document.getElementById('emailerror').innerHTML=" ";
+function validateCity() {
+  const city = cityInput.value.trim();
+  if (cityCheck.test(city)) {
+    document.getElementById('cityerror').innerHTML = "";
+  } else {
+    document.getElementById('cityerror').innerHTML = " ** City is invalid";
+  }
 }
-else{
-    document.getElementById('emailerror').innerHTML=" ** email is invalid";
-    return false;
+
+function validateMobile() {
+  const mobile = mobileInput.value.trim();
+  if (mobileCheck.test(mobile)) {
+    document.getElementById('numbererror').innerHTML = "";
+  } else {
+    document.getElementById('numbererror').innerHTML = " ** Mobile number is invalid";
+  }
 }
-if(password.match(cpassword)){
-    document.getElementById('cpassworderror').innerHTML=" ";
+
+function validateEmail() {
+  const email = emailInput.value.trim();
+  if (emailCheck.test(email)) {
+    document.getElementById('emailerror').innerHTML = "";
+  } else {
+    document.getElementById('emailerror').innerHTML = " ** Email is invalid";
+  }
 }
-else{
-    document.getElementById('cpassworderror').innerHTML=" ** password doesnt match";
-    return false;
+
+function validatePassword() {
+  const password = passwordInput.value;
+  const cpassword = cpasswordInput.value;
+  if (password === cpassword) {
+    document.getElementById('cpassworderror').innerHTML = "";
+  } else {
+    document.getElementById('cpassworderror').innerHTML = " ** Passwords don't match";
+  }
 }
-if(agecheck.test(age)){
-    document.getElementById('ageerror').innerHTML=" ";
+
+function validateConfirmPassword() {
+  validatePassword();
 }
-else{
-    document.getElementById('ageerror').innerHTML=" ** age is invalid";
-    return false;
-}
+
+function validateAge() {
+  const age = ageInput.value.trim();
+  if (ageCheck.test(age)) {
+    document.getElementById('ageerror').innerHTML = "";
+  } else {
+    document.getElementById('ageerror').innerHTML = " ** Age is invalid";
+  }
 }
